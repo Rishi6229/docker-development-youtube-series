@@ -1,0 +1,25 @@
+name: Docker series Builds
+
+on:[push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     -uses:actions/checkout@v2
+     -name:docker build
+      run: |
+           docker build ./c# -t aimvector/csharp:1.0.0
+      -name: docker build nodejs
+        run: |
+             docker build ./nodejs amivector/nodejs:1.0.0
+             
+     -name: docker build python
+       run: |
+          docker build ./pyhton amivector/pyhton: 1.0.0
+          
+      -name: docker build golang
+       run: |
+           docker build ./golang amivector/golang:1.0.0
+    
+    
